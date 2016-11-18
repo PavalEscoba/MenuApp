@@ -1,0 +1,27 @@
+@font-face {
+  font-family: 'Comfortaa';
+  src: url("../fonts/Comfortaa/Comfortaa-Regular.ttf"); }
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url("../fonts/Ubuntu/Ubuntu-Regular.ttf"); }
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+body {
+  font-family: 'Ubuntu', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.42;
+  color: #1C2331; }
+
+.main {
+  margin-top: 70px; }
+
+.btn-danger {
+  color: #b71c1c; }
+
+.ava {
+  border-radius: 50%; }

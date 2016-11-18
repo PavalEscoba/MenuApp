@@ -25,7 +25,19 @@ body {
 .btn-danger{
 	color: #b71c1c;
 }
+.navbar{
+	font-family: "Comfortaa";
+}
 .ava{
-	border-radius: 50%;
-	
+	border-radius: 50%;	
+}
+
+.well{
+	border-radius: 15px;
+}
+.well h4{
+	font-family: "Comfortaa";
+}
+.list{
+	list-style-position: inside;
 }

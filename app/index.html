@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<!--[if lt IE 7]>      <html lang="en" ng-app="menuApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="menuApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="menuApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="menuApp" class="no-js"> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,114 +13,45 @@
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 
+
 </head>
-<body>
-<body>
-<!-- <div class="container">
-    <div class="row">
-        <header class="container">
-            <div id="menu" class="navbar navbar-default navbar-fixed-top">
-                <div class="navbar-header">
-                    <button class="btn btn-danger navbar-toggle"
-                    data-toggle="collapse"
-                    data-target=".navbar-collapse"><i class="fa fa-bars"></i></button>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="nav active"><a href=".">Галоўная</a></li>
-                        <li class="nav"><a href="about.html">Табліца каларыйнасьці</a></li>
-                        <li class="nav"><a href="contact.html">Рэцэптуры</a></li>
-                    </ul>
-                </div>
-            </div>
-        </header>
-    </div> -->
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Brand</a>
+<body ng-controller="mainController">
+    <div class="container">
+      <header-top></header-top>
     </div>
-
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>
-      </ul>
-      <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li><li><a href="#">Link</a></li><li><a href="#">Link</a></li><li><a href="#">Link</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-<div class="main row">
-  <div class="col-md-3 col-sm-12">
-    <div class="image panel-success">
-      <h4 class="panel-heading">Імя карыстальніка</h4>
-      <img src="img/ava.jpeg" alt="ava" class="img-responsive ava">
-      <div class="panel-body">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error explicabo voluptas natus nemo in officiis.
-      </div>
-      <div class="panel-footer">
-        <button class="btn btn-info">Падрабязьней</button>
+    <div class="container intro">
+      <div class="row">
+        <intro></intro>
       </div>
     </div>
-  </div>
-  <div class="col-md-9 col-sm-12">
-    <div class="col-md-6 col-sm-12">
-      <form action="" >
-        <div class="form-group">
-          <label for="name" class="control-label">Вашае імя </label>
-          <input type="text" class="form-control" id='name' placeholder="e.g. Your Name" >
+    <main class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-12">
+          <user-card></user-card>
         </div>
-        <div class="form-group">
-          <label for="weight" class="control-label">Вашая вага</label>
-          <input type="number" class="form-control" id='weight' placeholder="e.g. Your weight (kg)" >
+        <div class="col-md-6 col-md-offset-1 col-sm-12">
+          <form-part></form-part>
         </div>
-        <div class="form-group">
-          <label for="height" class="control-label">Ваш рост</label>
-          <input type="number" class="form-control" id='height' placeholder="e.g. Your height (cm)" >
-        </div>
-        <input type="submit" class="btn btn-success">
-      </form>
-    </div>
-  </div>
-</div>
+      </div>
+    </main>
 
-</div>
+  
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
-<script src="app.js"></script>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-
 <script src="components/version/version.js"></script>
 <script src="components/version/version-directive.js"></script>
 <script src="components/version/interpolate-filter.js"></script>
+<script src="app.js"></script>
+<script src="controllers/mainController.js"></script>
+<script src="directives/header.js"></script>
+<script src="directives/userCard.js"></script>
+<script src="directives/formPart.js"></script>
+<script src="directives/intro.js"></script>
 </body>
 </html>
