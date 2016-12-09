@@ -1,0 +1,26 @@
+{
+  "first":[
+    {
+      "name": "Каша",
+      "portion": 200,
+      "calories":100
+    },
+    {
+      "name": "Сэндвіч з таматам",
+      "portion": "125",
+      "calories": 75
+    }],
+  "drink":[
+    {
+      "name": "Гарбата з цукрам",
+      "portion": "200",
+      "calories": 10
+    },
+    {
+      "name":"Кава з цукрам",
+      "portion": 150,
+      "calories": 15
+    }
+  ]
+}
+

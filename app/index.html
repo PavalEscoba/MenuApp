@@ -18,28 +18,176 @@
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 
 
+
 </head>
 <body ng-controller="mainController">
-    <div class="container">
-      <header-top></header-top>
-    </div>
+
     <div class="container intro">
       <div class="row">
-        <intro></intro>
+          <div class="well col-md-12">
+              <div class="panel-success">
+                  <h4 class="panel-heading text-center">
+                      С к л а д з і  С в а ё  М э н ю!
+                  </h4>
+                  <div class="panel-body">
+                      <p>Гэты онлайн дадатак дае магчымасьць складаць і рэдагаваць мэню на кожны дзень.</p>
+                  </div>
+              </div>
+
+          </div>
       </div>
     </div>
     <main class="container">
       <div class="row">
-        <div class="col-md-3 col-sm-12">
-          <user-card></user-card>
+        <div class="col-md-4 col-sm-12 user-card">
+            <div class="panel-success">
+                <h5 class="panel-heading">
+                    Імя карыстальніка
+                </h5>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 col-sm-4 col-sm-offset-4 col-xs-6 col-xs-offset-3">
+                        <img src="img/ava.jpeg" alt="" class="img-responsive ava">
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <ul class="list-group col-md-10 col-md-offset-1">
+                        <li class="list-group-item"><a>Панядзелак</a></li>
+                        <li class="list-group-item"><a>Аўторак</a></li>
+                        <li class="list-group-item"><a>Серада</a></li>
+                        <li class="list-group-item"><a>Чацьвер</a></li>
+                        <li class="list-group-item"><a>Пятніца</a></li>
+                        <li class="list-group-item"><a>Субота</a></li>
+                        <li class="list-group-item"><a>Нядзеля</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="col-md-6 col-md-offset-1 col-sm-12">
-          <form-part></form-part>
+        <div class="col-md-8 col-sm-12">
+            <form action="" class="form-horizontal">
+                <div class="panel-warning col-md-6">
+                    <h5 class="panel-heading">Тып мэню</h5>
+                    <div class="menu-options ">
+                        <div class="radio">
+                            <input type="radio" name="menu" value="vegetarian" id="vegetarian" ng-model="vegetarian">
+                            <label for="vegetarian">Вегетарыянскае</label>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" name="menu" value="vegetarian" id="meat" ng-model="meat">
+                            <label for="meat">Усяяднае</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-info col-md-6">
+                    <h5 class="panel-heading">Колькасць калорый</h5>
+                    <div class="radio">
+                        <input type="radio" name="aim" value="lose" id="lose">
+                        <label for="lose">Пахудзенне (&#8776 1500 ккал)</label>
+                    </div>
+                    <div class="radio">
+                        <input type="radio" name="aim" value="normal" id="normal">
+                        <label for="normal">Падтрымка нормы (&#8776 2000 ккал)</label>
+                    </div>
+                    <div class="radio">
+                        <input type="radio" name="aim" value="gain" id="gain">
+                        <label for="gain"> Набор вагі (&#8776 2500 ккал)</label>
+                    </div>
+                </div>
+                <a class="btn btn-success btn-lg col-md-4 col-md-offset-4" ng-click="apiCall()">Падабраць</a>
+            </form>
         </div>
-      </div>
-    </main>
+        <div class="row col-md-8 result" ng-if="showResult">
+            <div class="select">
+                <div class="panel col-md-4">
+                    <h5 class="panel-heading menu-heading">
+                        Cняданак
+                    </h5>
+                    <label for="breakfast">Выберыце асноўную страву:</label>
+                    <select ng-model="breakfastMeal" name="breakfast" id="breakfast" class="form-control">
+                        <option ng-repeat="meal in firstMeal">{{meal.name}}</option>
+                    </select>
+                    <label for="drink">Выберыце напой</label>
+                    <select ng-model="breakfastDrink" name="drink" id="drink" class="form-control">
+                        <option ng-repeat="drink in drinks">{{drink.name}}</option>
+                    </select>
 
-  
+                </div>
+                <div class="panel col-md-4 lunch">
+                    <h5 class="panel-heading menu-heading">
+                        Абед
+                    </h5>
+                    <label for="soup-lunch">Выберыце першую страву:</label>
+                    <select name="soup-lunch" id="soup-lunch" class="form-control">
+                        <option value="chicken-soup"></option>
+                    </select>
+                    <label for="main-lunch">Выберыце асноўную страву:</label>
+                    <select name="" id="main-lunch" class="form-control">
+                        <option value=""></option>
+
+                    </select>
+                    <label for="garnish-lunch">Выберыце гарнір</label>
+                    <select name="garnish-lunch" id="garnish-lunch" class="form-control">
+                        <option></option>
+
+                    </select>
+                </div>
+                <div class="panel col-md-4 dinner">
+                    <h5 class="panel-heading menu-heading text-center">
+                        Вячэра
+                    </h5>
+                    <label for="dinner-first">Выберыце першую страву:</label>
+                    <select name="dinner" id="dinner-first" class="form-control">
+                        <option></option>
+                    </select>
+                    <label for="dinner-main">Выберыце асноўную страву:</label>
+                    <select name="" id="dinner-main" class="form-control">
+                        <option></option>
+
+                    </select>
+                    <label for="dinner-garnish">Выберыце гарнір</label>
+                    <select name="" id="dinner-garnish" class="form-control">
+                        <option value=""></option>
+
+                    </select>
+                </div>
+            </div>
+
+            <div ng-controller="CalculateController">
+
+                <div class="col-md-12 table-responsive" ng-if="breakfastMeal">
+                    <a class="btn btn-success btn-lg col-md-4 col-md-offset-4" ng-click="calculate()">Пачаць разлік</a>
+
+                    <table class="table table-condensed table-bordered table-striped" ng-if="showTable">
+                        <thead>
+                            <tr>
+                                <td><b>Назва стравы</b></td>
+                                <td><b>Каларыйнасьць(ккал)</b></td>
+                                <td><b>Порцыя у грамах</b></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{breakfastMeal}}</td>
+                                <td><input type="number" value={{breakfastMealCalories}} style="width:50px" ng-model="inputNumMeal"> ккал</td>
+                                <td>{{breakfastMealPortion}} г</td>
+                            </tr>
+                            <tr>
+                                <td>{{breakfastDrink}}</td>
+                                <td><input type="number" value={{breakfastDrinkCalories}} style="width:50px" ng-model="inputNumDrink"> ккал</td>
+                                <td>{{breakfastDrinkPortion}} г</td>
+                            </tr>
+                        <tr>
+                            <td colspan="2"></td>
+                            <td>Агульна: {{inputNumMeal + inputNumDrink}} ккал </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+      </div>
+    </main>  
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
@@ -49,9 +197,7 @@
 <script src="components/version/interpolate-filter.js"></script>
 <script src="app.js"></script>
 <script src="controllers/mainController.js"></script>
-<script src="directives/header.js"></script>
-<script src="directives/userCard.js"></script>
-<script src="directives/formPart.js"></script>
-<script src="directives/intro.js"></script>
+<script src="controllers/CalculateController.js"></script>
+
 </body>
 </html>
